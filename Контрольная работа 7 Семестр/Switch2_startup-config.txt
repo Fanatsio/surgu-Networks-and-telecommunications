@@ -1,0 +1,14 @@
+hostname SwitchA3
+vlan 100
+ name Management
+vlan 200
+ name Servers
+vlan 300
+ name Clients
+!
+interface GigabitEthernet0/1
+ description Uplink to SwitchA2
+ switchport mode trunk
+ switchport trunk allowed vlan 100,200,300
+!
+spanning-tree mode rapid-pvst
